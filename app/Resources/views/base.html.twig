@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}Hangman{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+<div id="wrapper">
+
+    {% include('_header.html.twig') %}
+
+    <div id="page">
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+
+        {{ render(controller('AppBundle\\Controller\\GameController:sidebar')) }}
+
+        <br class="clearfix" />
+    </div>
+</div>
+
+</body>
+</html>
